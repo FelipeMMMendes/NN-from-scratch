@@ -51,3 +51,28 @@ Depois que a rede neural fez uma predição, precisamos avaliar o quão certeira
 4. **Processo de Iteração**: Esse processo de forward e backward propagation é repetido iterativamente em lotes de dados de treino, com cada iteração, os pesos e os biases da rede se aproximam de valores que minimizam o erro.
 
 **Em resumo, a propagação para trás ajusta os parâmetros da rede, fazendo com que fiquem com mais acurácia. Esse processo de iteração continua até que a rede alcance um nível satisfatório de performance nos dados de treino**
+
+### **Shape**:
+Para trabalhar com redes neurais e deep learning, precisamos entender o conceito de **shape** ou formato nas linguagens de programação.
+
+No contexto de **deep learning em python**, vamos ver as formas que o **numpy** reconhece:
+
+![shape](https://i.imgur.com/sNTvXjn.png)
+
+Acima temos uma lista com 4 elementos, de uma dimensão, então é um vetor. Ela tem 4 elementos, então o shape dela é (4, ).
+
+![shape](https://i.imgur.com/rjvZZn2.png)
+
+Acima temos uma lista com duas listas dentro, cada uma com 4 elementos. Isso é uma matriz, o shape dela é (2, 4).
+
+![shape](https://i.imgur.com/5qYQjEk.png)
+
+Acima temos uma lista, dentro dessa lista temos 3 outras listas, dentro dessas 3 outras listas, temos 2 listas em cada, em cada uma dessas duas listas temos 4 elementos.
+
+Temos outra forma que é o **tensor**, de forma bem rasa, um tensor é um objeto que pode ser representado como um array, ele não é um simples array, mas no contexto de programação e deep learning ele pode ser representado e trabalhado como um array.  
+
+### **Dot product**
+
+Entendo o conceito dos tipos de array acima, podemos fazer operações entre eles, no caso do **Dot Product**, estamos falando da **multiplicação** de dois arrays, e ele nos retorna somente um valor. Vale ressaltar que o dot product vem da biblioteca do numpy.
+
+![dot_product](https://i.imgur.com/xh5txKP.png)

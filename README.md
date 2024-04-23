@@ -12,7 +12,8 @@ Uma rede neural é um modelo que simula o modo de aprendizado humano, com suas s
 Para treinar a rede neural, é feito o balanceamento dos **pesos** e dos **biases.**
 
 - **Pesos:** São os padrões para a força do sinal do neurônio, esse valor vai determinar a influência dos dados de entrada no produto da saída de cada neurônio. Pense neles como os números que ajustam o impacto dos dados que estão entrando. Eles podem aumentar ou diminuir a importância de informações específicas. **Em essência, os pesos são a forma da rede neural aprender com os dados. Eles capturam as relações entre as features de entrada e de saída alvo, permitindo que a rede neural generalize e faça predições em dados que ela não viu.**
-- **Bias:** Acrescentam uma camada adicional de flexibilidade para as redes neurais. Biases são constantes associadas com cada neurônio. Ao contrário dos pesos, o bias não está relacionado com dados específicos de entrada do neurônio, mas são acrescentados aos dados de saída do neurônios. Bias são como um limite, permitindo que alguns neurônios sejam ativados mesmo que a soma dos pesos dos dados que entraram não seja o suficiente por conta própria. Os biases introduzem um nível de adaptabilidade que garante que a rede possa aprender e fazer predições efetivamente. Para ficar claro, imagine um neurônio que processe o nível de brilho do pixel de uma imagem, sem o bias, esse neurônio só seria ativado quando o nível de brilho do pixel estivesse exatamente em um certo limite, mas colocando o bias, você permite que o neurônio ative mesmo quando o brilho estiver um pouco menor ou acima do limite. Essa flexibilidade é crucial porque os dados do mundo real raramente estão alinhados em um exato limite. Dessa forma, os biases permitem que os neurônios ativem em várias condições de entrada, fazendo com que as redes neurais fiquem mais robustas e capazes de lidar com dados complexos. Durante o treino, os biases são ajustados para otimizar a performance da rede neural.
+
+- **Bias:** Acrescentam uma camada adicional de flexibilidade para as redes neurais. Biases são constantes associadas com cada neurônio. Ao contrário dos pesos, o bias não está relacionado com dados específicos de entrada do neurônio, mas são acrescentados aos dados de saída do neurônios. Bias são como um limite, permitindo que alguns neurônios sejam ativados mesmo que a soma dos pesos dos dados que entraram não seja o suficiente por conta própria. Os biases introduzem um nível de adaptabilidade que garante que a rede possa aprender e fazer predições efetivamente. Para ficar claro, imagine um neurônio que processe o nível de brilho do pixel de uma imagem, sem o bias, esse neurônio só seria ativado quando o nível de brilho do pixel estivesse exatamente em um certo limite, mas colocando o bias, você permite que o neurônio ative mesmo quando o brilho estiver um pouco menor ou acima do limite. Essa flexibilidade é crucial porque os dados do mundo real raramente estão alinhados em um exato limite. Dessa forma, os biases permitem que os neurônios ativem em várias condições de entrada, fazendo com que as redes neurais fiquem mais robustas e capazes de lidar com dados complexos. Durante o treino, os biases são ajustados para otimizar a performance da rede neural. 
 
 ![REDE NEURAL II](https://i.imgur.com/fSBTsUP.png)
 
@@ -52,6 +53,16 @@ Depois que a rede neural fez uma predição, precisamos avaliar o quão certeira
 
 **Em resumo, a propagação para trás ajusta os parâmetros da rede, fazendo com que fiquem com mais acurácia. Esse processo de iteração continua até que a rede alcance um nível satisfatório de performance nos dados de treino**
 
+### **Cálculo da Saída do Neurônio de forma visual**
+ A saída do neurônio é dada por:  
+
+\[
+\text{Saída Neurônio} = \text{Input} \times \text{Peso} + \text{Bias}
+\]  
+Ela se assemelha a uma função de primeiro grau, esse seria o comportamento dela:
+
+![NN_formula](https://i.imgur.com/lzEKc4S.gif)
+
 ### **Shape**:
 Para trabalhar com redes neurais e deep learning, precisamos entender o conceito de **shape** ou formato nas linguagens de programação.
 
@@ -73,6 +84,18 @@ Temos outra forma que é o **tensor**, de forma bem rasa, um tensor é um objeto
 
 ### **Dot product**
 
-Entendo o conceito dos tipos de array acima, podemos fazer operações entre eles, no caso do **Dot Product**, estamos falando da **multiplicação** de dois arrays, e ele nos retorna somente um valor. Vale ressaltar que o dot product vem da biblioteca do numpy.
+Pegando o conceito dos tipos de array acima, podemos fazer operações entre eles, no caso do **Dot Product**, estamos falando da **multiplicação** de dois arrays, e ele nos retorna somente um valor. Vale ressaltar que o dot product vem da biblioteca do numpy.
 
 ![dot_product](https://i.imgur.com/xh5txKP.png)
+
+### Batches
+
+Usamos lotes nos inputs na camada de entrada da rede porque assim facilita o aprendizado para o modelo. Se usarmos apenas uma entrada por vez para treinar o modelo, ele terá mais dificuldades para fazer os ajustes. Se usarmos mais entradas por vezes, o modelo irá se ajustar com mais facilidade.
+
+![dot_product](https://i.imgur.com/dkR4r0K.gif)
+
+No exemplo acima, os pontos que surgem são os dados que pedimos para a rede se ajustar, como estamos passando dados de entrada com lotes de tamanho 1, percebe-se que a linha se movimenta e muito.
+
+![dot_product](https://i.imgur.com/JESirG6.gif)
+
+Já nesse outro exemplo, a linha vai se adaptando, e quando se ajusta totalmente, percebe-se que ela vai se movendo muito pouco, isso porque estamos agora passando dados de entrada com lotes com tamanho 32.

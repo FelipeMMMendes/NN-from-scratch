@@ -99,3 +99,17 @@ No exemplo acima, os pontos que surgem são os dados que pedimos para a rede se 
 ![dot_product](https://i.imgur.com/JESirG6.gif)
 
 Já nesse outro exemplo, a linha vai se adaptando, e quando se ajusta totalmente, percebe-se que ela vai se movendo muito pouco, isso porque estamos agora passando dados de entrada com lotes com tamanho 32.
+
+### Funções de Ativação
+
+Como vimos acima, os resultados de uma rede neural possuem uma relação linear, para introduzirmos uma **Não-Linearidade** na rede neural e assim possibilitarmos que ela compreenda melhor relações mais complexas nos dados, usamos as **funções de ativação**.
+
+A ideia é que as funções de ativação são aplicadas nos resultados dos neurônios, após todas as operações.
+
+![products](https://miro.medium.com/v2/resize:fit:828/format:webp/1*bUNxrEy2KjKNrwMRo8eS9w.png)
+
+Depois de pegar os resultados $z_{1}$ e $z_{2}$ aplicamos eles na função de ativação 𝜎.
+
+![activation function >](https://miro.medium.com/v2/resize:fit:278/format:webp/1*9DfvAg_pENO5MX0ELeY_kg.png)
+
+

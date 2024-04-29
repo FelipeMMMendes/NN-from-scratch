@@ -56,7 +56,7 @@ Depois que a rede neural fez uma predição, precisamos avaliar o quão certeira
 ### **Cálculo da Saída do Neurônio de forma visual**
  A saída do neurônio é dada por:  
 
-\[\text{Saída Neurônio} = \text{Input} \times \text{Peso} + \text{Bias}\]
+$\text{Saída Neurônio} = \text{Input} \times \text{Peso} + \text{Bias}\$
   
 Ela se assemelha a uma função de primeiro grau, esse seria o comportamento dela:
 

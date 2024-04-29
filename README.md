@@ -58,7 +58,8 @@ Depois que a rede neural fez uma predição, precisamos avaliar o quão certeira
 
 \[
 \text{Saída Neurônio} = \text{Input} \times \text{Peso} + \text{Bias}
-\]  
+\]
+  
 Ela se assemelha a uma função de primeiro grau, esse seria o comportamento dela:
 
 ![NN_formula](https://i.imgur.com/lzEKc4S.gif)

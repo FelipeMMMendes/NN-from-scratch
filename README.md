@@ -111,4 +111,16 @@ Depois de pegar os resultados $z_{1}$ e $z_{2}$ aplicamos eles na função de at
 
 ![activation function >](https://miro.medium.com/v2/resize:fit:278/format:webp/1*9DfvAg_pENO5MX0ELeY_kg.png)
 
+#### Função de ativação ReLU
+
+**ReLU** significa Rectified Linear Unit, ou Unidade Linear Retificada. Ela é a função mais utilizada para fazer a maioria das tarefas de deep learning. 
+
+A função de ativação ReLU é diferenciável em todos os pontos (pode ser derivada em todos eles) exceto no ponto 0. Para valores maiores do que 0, consideramos aquele valor como o máximo da função.
+
+Podemos dizer que ela é assim:
+
+$f(x) = max{0, z}
+
+Todos os valores negativos viram 0, e o máximo do valor positivo é considerado.
+
 

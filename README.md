@@ -119,7 +119,7 @@ A função de ativação ReLU é diferenciável em todos os pontos (pode ser der
 
 Podemos dizer que ela é assim:
 
-$f(x) = max{0, z}
+$f(x) = max{0, z}$
 
 Todos os valores negativos viram 0, e o máximo do valor positivo é considerado.
 

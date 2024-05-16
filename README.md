@@ -119,8 +119,36 @@ A função de ativação ReLU é diferenciável em todos os pontos (pode ser der
 
 Podemos dizer que ela é assim:
 
-$f(x) = max{0, z}$
+**$f(x) = max\{0, z}\$**
 
 Todos os valores negativos viram 0, e o máximo do valor positivo é considerado.
 
+![relu](https://i.imgur.com/CTas9Z7.png)
 
+Para a camada de saída, isso pode ser inadequado em muitos casos, imagine que temos resultados com valores -9000, -10, -11, -15.7, todas elas viram 0 ao passar pela ReLU, nesse sentido, essas saídas perdem seu significado. 
+
+
+#### Função de ativação Softmax
+
+A função de ativação Softmax faz com que todos os valores não percam seu significado, se um valor negativo entrar, ele ainda vai ter algum significado.
+
+A função softmax pode ser escrita assim:
+
+**$$
+\text{softmax}(z)_i = \frac{e^{z_i}}{\sum_{l=1}^{K} e^{z_j}}
+$$**
+
+
+O interessante dela é que ela faz com que um vetor de K valores vire um outro vetor de K valores que a soma é proxima de 1. Ao contrário da ReLU, ela mantém as entradas menores e iguais a 0, e todos os valores que passam por essa função ficam entre o intervalo de 0 e 1, nesse sentido, eles podem ser interpretados como probabilidades. Se uma das entradas é pequena ou negativa, a softmax transforma em uma probabilidade pequena, e se uma das entradas for maior, então transforma essa entrada em uma probabilidade maior, mas que vai sempre estar entre 0 e 1.
+
+As camadas finais de muitas redes neurais trazem saidas que são valores não escalonados convenientemente e que podem ser um pouco difíceis de trabalhar. Nessas camadas finais a softmax é muito útil porque converte esses valores em uma distribuição normalizada de probabilidade, que pode ser mostrada para o usuário ou como entrada em outros sistemas.
+
+![softmax](https://i.imgur.com/PMrTm4I.png)
+
+**Funcionamento prático da Softmax**
+
+![softmax1](https://i.imgur.com/dEVJ2GJ.png)
+
+![softmax2](https://i.imgur.com/BhxSJ4j.png)
+
+A softmax pega as entradas, faz a exponencial e normaliza.

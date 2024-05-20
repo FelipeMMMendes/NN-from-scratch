@@ -152,3 +152,42 @@ As camadas finais de muitas redes neurais trazem saidas que são valores não es
 ![softmax2](https://i.imgur.com/BhxSJ4j.png)
 
 A softmax pega as entradas, faz a exponencial e normaliza.
+
+### Cálculo de Loss (Perda)
+
+Queremos calcular o Loss para fazer a otimização, para determinar o quão errado o modelo está.
+
+Têm várias maneiras de fazer esse cálculo, mas na maioria das vezes, a função de Loss usada para casos de **classificação** é a de **Categorical Cross-Entropy**
+
+$$
+L = -\sum_{j=1} y_{ij} \log(\hat{y}_{ij})
+$$
+
+Onde:
+- \( L \) é o valor da loss (perda) da amostra.
+- \( y \) são os valores alvo.
+- \( y_{ij} \) é o valor binário indicando se a amostra \( i \) pertence à classe \( j \) (1 se pertence, 0 caso contrário).
+- \( \hat{y}_{ij} \) é a probabilidade prevista da amostra \( i \) pertencer à classe \( j \) (valores previstos).
+- \( \log \) é a função logarítmica natural.
+
+Para entender melhor o funcionamento dessa função, precisamos compreender a lógica do **One Hot Encoding**.
+
+#### One Hot Encoding
+
+O One Hot Encoding é usado para o cálculo de Loss da seguinte forma:
+
+Suponhamos que temos um vetor com n classes de comprimento, ele é preenchido com 0, exceto em que no index da classe alvo teremos 1.
+
+Imagine que temos um vetor de 3 classes, e o index da classe alvo é 0, então teremos o primeiro elemento do vetor como 1, e o resto 0.
+
+![onehot](https://i.imgur.com/xUL2avo.png)
+
+![onehot](https://i.imgur.com/3xGEaQp.png)
+
+A relação disso com a função de perda é que na função vamos passar as predições e os resultados reais com o one hot encoding. Por exemplo:
+
+![onehot](https://i.imgur.com/QUDZqSC.png)
+
+Aqui, usando o hot encoding, passamos que a classe alvo estava na posição 1 do vetor, então, em cima disso, ele faz a multiplicação de cada classe com o log da sua predição, e no final soma tudo.
+
+

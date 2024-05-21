@@ -190,4 +190,20 @@ A relação disso com a função de perda é que na função vamos passar as pre
 
 Aqui, usando o hot encoding, passamos que a classe alvo estava na posição 1 do vetor, então, em cima disso, ele faz a multiplicação de cada classe com o log da sua predição, e no final soma tudo.
 
+Com a ideia de One Hot Encoding, vamos para um exemplo mais prático:
+
+Supondo que temos 3 classes a serem previstas (cachorro, gato e humano) e temos os resultados de três camadas que passaram pela softmax. Ilustrando ficaria dessa forma:
+
+![exemplopratico](https://i.imgur.com/oIZeTko.png)
+
+Então cachorros seriam representandos com 0, gatos com 1 e humanos 2, ficando assim:
+
+![exemplopratico](https://i.imgur.com/dDv1h41.png)
+
+Nesse sentido, temos que descobrir quais os níveis de confiança nas classes que estão certas. Para fazer isso, temos que pegar os valores índices da classe alvo e pegar os valores das saídas da softmax que estão nesses índices.
+
+No exemplo acima, a confiança de cachorro vai ser 0.7 na primeira camada, 0.1 na segunda e 0.02 na terceira, e segue a mesma lógica para gato e humano, percebe-se que os níveis de confiança são maiores quando as classes estão certas. No exemplo, no primeiro lote vai ser cachorro, no segundo gato e no terceiro gato também.
+
+
+
 
